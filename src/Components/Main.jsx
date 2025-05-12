@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 
 export default function Main() {
   const [events, setEvents] = useState([]);
-
+  
   useEffect(() => {
     const fetchData = async () => {
+        const apiKey = process.env.REACT_APP_TICKETMASTER_API_KEY;
       try {
         const result = await fetch(
-          'xx'
+          `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${apiKey}&city=London`
         );
         const data = await result.json();
         const eventsData = data._embedded?.events || [];
