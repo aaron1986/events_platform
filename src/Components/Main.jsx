@@ -1,8 +1,9 @@
 export default function Main() {
     return (
-        <div class="grid-item grid-item2">
+        <div>
   <section>
-
+        <h2>View Events</h2>
+        
   </section>
 </div>
     )
