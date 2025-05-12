@@ -6,10 +6,9 @@ export default function Main() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const apiKey = process.env.REACT_APP_TICKETMASTER_API_KEY;
         const result = await fetch(
-          // 'https://app.ticketmaster.com/discovery/v2/events.json?apikey=FzhugPNAJdDZM7NJLZN1Pyh2FLwzPu2m&city=London'
-          `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${apiKey}&city=London`
+           //'https://app.ticketmaster.com/discovery/v2/events.json?apikey=FzhugPNAJdDZM7NJLZN1Pyh2FLwzPu2m&city=London'
+          `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${process.env.REACT_APP_TICKETMASTER_API_KEY}&city=London`
         );
         const data = await result.json();
         const eventsData = data._embedded?.events || [];
