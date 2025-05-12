@@ -1,10 +1,37 @@
+import React, { useEffect, useState } from 'react';
+
 export default function Main() {
-    return (
-        <div>
-  <section>
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await fetch(
+          'https://app.ticketmaster.com/discovery/v2/events.json?apikey=FzhugPNAJdDZM7NJLZN1Pyh2FLwzPu2m&city=London'
+        );
+        const data = await result.json();
+        const eventsData = data._embedded?.events || [];
+        setEvents(eventsData);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  return (
+    <div>
+      <section>
         <h2>View Events</h2>
-        
-  </section>
-</div>
-    )
+        <ul className="kkk">
+          {events.map((event) => (
+            <li key={event.id}>
+              <strong>{event.name}</strong> — {event.dates.start.localDate}
+            </li>
+          ))}
+        </ul>
+      </section>
+    </div>
+  );
 }
