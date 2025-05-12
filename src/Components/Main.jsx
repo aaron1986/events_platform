@@ -7,7 +7,7 @@ export default function Main() {
     const fetchData = async () => {
       try {
         const result = await fetch(
-          'https://app.ticketmaster.com/discovery/v2/events.json?apikey=FzhugPNAJdDZM7NJLZN1Pyh2FLwzPu2m&city=London'
+          'xx'
         );
         const data = await result.json();
         const eventsData = data._embedded?.events || [];
