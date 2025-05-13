@@ -67,7 +67,7 @@ const SendEmail = (event) => {
                 <input type="text" id="fname" name="fname" value={formData.fname} onChange={handleInputChange} placeholder="Enter your name.."/>
                 {errors.fname && <p className="error-message">{errors.fname}</p>}
 
-                <label htmlFor="address">Address:</label>
+                <label htmlFor="address"><span>Address <span className="required-star">*</span></span></label>
                 <SearchBox accessToken="pk.eyJ1IjoiamFjb2IxOTg2IiwiYSI6ImNtYW1oazJkeTA5bGkya3F3MXVvamR3aWwifQ.sLzBo3c-W1TAFWIxeCcRTg" value={formData.address} onRetrieve={(res) => {
                 const address = res.features[0]?.properties?.full_address || '';
                 setFormData({ ...formData, address });

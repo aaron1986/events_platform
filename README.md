@@ -1,3 +1,5 @@
+![Wireframe Image](./src/assets/wireframes.png)
+
 <h1>#Events Platform</h1>
 
 (1) I created a new directory in the terminal entitled 'events_platform' and then proceeded to cd into same directory. </br></br>
