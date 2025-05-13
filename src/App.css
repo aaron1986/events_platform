@@ -1,6 +1,25 @@
-/* From Uiverse.io by adamgiebl */ 
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
 
-
+* {
+  box-sizing: border-box;
+}
+html, body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Helvetica, sans-serif;
+  color: #000;
+  background-color: #fff;
+}
 
 section {
     display: flex;
@@ -8,7 +27,7 @@ section {
     flex-direction: column;
     align-items: center;
     flex-wrap: nowrap;
-    width: 97vw;
+    width: 90vw;
 }
 
 button {
@@ -29,4 +48,72 @@ button:hover {
 
 button:active {
   box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
+}
+
+
+/* FORM */
+label,
+input,
+textarea {
+    display: block;
+    width: 100%;
+}
+
+span {
+    font-weight: 700;
+    color: #102a43;
+    line-height: 35px;
+    line-height: 2.5rem;
+    font-size: 12px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+form {
+    background-color: #ffffff;
+    padding-top: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.required-star {
+    color: #fc4366;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 9px 20px;
+    border: 1px solid #e1e2eb;
+    background-color: #fff;
+    color: #102a43;
+    caret-color: #829ab1;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-size: 1rem;
+    line-height: 29px;
+    line-height: 2rem;
+    box-shadow: inset 0 2px 4px 0 rgba(206, 209, 224, 0.2);
+    border-radius: 3px;
+    line-height: 29px;
+    line-height: 2rem;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+}
+
+.success-message {
+  color: green;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.required-star {
+  color: red;
 }

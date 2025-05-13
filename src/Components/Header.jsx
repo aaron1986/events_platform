@@ -15,9 +15,9 @@ export default function Header() {
             <div className="logo_name">Logo</div>
             <ul id="navi-List" className={isActive ? 'active' : ''}>
               <li><a href="index.html">Home</a></li>
-              <li><a href="info.html">View Events</a></li>
-              <li><a href="about.html">Sign up</a></li>
-              <li><a href="contact.html">Add Events</a></li>
+              <li><a href="view_events.html">View Events</a></li>
+              <li><a href="sign_up.html">Sign up</a></li>
+              <li><a href="add_events.html">Add Events</a></li>
             </ul>
 
             <div className="menu" id="toggle-Button" onClick={toggleMenu}>
