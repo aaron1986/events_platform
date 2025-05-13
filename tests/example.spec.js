@@ -46,7 +46,9 @@ test("Form Validation", async ({page}) => {
   await expect(page.locator('p.error-message')).toHaveText([
     'Name is required.',
     'Email is required.',
-    'Message is required.'
+
+    'Password is required.',
+    'Please confirm your password.'
   ]);
   
   })
@@ -54,7 +56,6 @@ test("Form Validation", async ({page}) => {
   test("Form submit test", async({page}) => {
     await page.fill('#fname', 'Aaron Smith');
     await page.fill('#email', 'aaron@example.com');
-    await page.fill('#message', 'This is a test message.');
   
     await page.click('button[type="submit"]');
     await expect(page.locator('text=Your message has been sent successfully!')).toBeVisible();

@@ -44,17 +44,19 @@ export default function ContactPage() {
         return errors;
     };
 
-        const SendEmail = (event) => {
-        event.preventDefault();
-        const validationErrors = validate();
-        setErrors(validationErrors);
+const SendEmail = (event) => {
+  event.preventDefault();
+  const validationErrors = validate();
+  setErrors(validationErrors);
 
-        if (Object.keys(validationErrors).length === 0) {
-        console.log('Form submitted:', formData);
-        setIsSubmitted(true);
-        setFormData({ fname: '', email: '', password: '', repeatPassword: '' });
-        } 
-    };
+  if (Object.keys(validationErrors).length === 0) {
+    console.log('Form submitted:', formData);
+    setIsSubmitted(true);
+    setFormData({ fname: '', email: '', password: '', repeatPassword: '', address: '' });
+    setTimeout(() => setIsSubmitted(false), 3000);
+  }
+};
+
 
 
     return (
@@ -93,7 +95,8 @@ export default function ContactPage() {
                 <input type="date" id="dateOfBirth" name="dateOfBirth"></input>
 
                 <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-                <button type="submit" className="registerbtn">Register</button>
+                 <button className="registerbtn" type="submit">REGISTER</button>
+                {isSubmitted && <p className="success-message">Your message has been sent successfully!</p>}
             </form>
         </div>
     )
